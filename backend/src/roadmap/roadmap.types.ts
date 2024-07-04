@@ -1,5 +1,5 @@
-export type Laptop = {
-  title: string;
-  price: number;
-  image: string;
-};
+// export type Laptop = {
+//   title: string;
+//   price: number;
+//   image: string;
+// };
