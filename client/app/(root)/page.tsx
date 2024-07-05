@@ -28,9 +28,11 @@ export default function Home() {
                 <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
                     <div className="flex flex-col justify-center gap-8">
                         <h1 className="h2-bold">
-                            Узнайте о предстоящих хакатонах, ИТ-конференциях и технических мероприятиях по всему миру, подходящих именно вам.
+                            Узнайте о предстоящих ИТ мероприятиях по всему миру, подходящих именно вам в один клик.
                         </h1>
-                        {/* <p className="p-regular-16 md:p-regular-18">
+                        {/* 
+                        <p>Узнайте о предстоящих хакатонах, ИТ-конференциях и технических мероприятиях по всему миру, подходящих именно вам.</p>
+                        <p className="p-regular-16 md:p-regular-18">
                             ITEventsAI — это ваш персональный помощник, который самостоятельно ищет и предлагает IT ивенты, подходящие именно вам. Приложение автоматически добавляет выбранные события в ваш календарь и помогает организовать задачи до дедлайна.
                         </p> */}
                         <Button size="lg" asChild className="button w-full sm:w-fit">
@@ -51,7 +53,7 @@ export default function Home() {
             </section>
 
             <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-                <h2 className="h2-bold">Не упусти свои возможности</h2>
+                <h2 className="h2-bold text-primary-500">Не упусти свои возможности</h2>
 
                 {loading ? (
                     <div className="flex items-center justify-center">
