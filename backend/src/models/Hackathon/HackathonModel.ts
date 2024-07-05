@@ -37,7 +37,8 @@ const HackathonSchema = new Schema<HackathonDocument>({
     invite_only: { type: Boolean },
     eligibility_requirement_invite_only_description: { type: String, default: null },
     managed_by_devpost_badge: { type: Boolean, required: true },
-    embedding: [Number]
+    embedding: [Number],
+    rules: { type: String }
 });
 
 export default mongoose.model<HackathonDocument>('Hackathon', HackathonSchema);

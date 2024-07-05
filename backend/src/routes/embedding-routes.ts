@@ -6,11 +6,11 @@ import { hitOpenAiApi } from '../utils/openai';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Load environment variables from .env file
+dotenv.config(); 
 
 const embeddingRouter = express.Router();
 
-// Endpoint to add new hackathons to the database
+
 embeddingRouter.post('/hackathons', async (req: Request, res: Response) => {
     try {
         const savedHackathons = await saveHackathonsToDatabase();
@@ -26,6 +26,7 @@ embeddingRouter.post('/hackathons', async (req: Request, res: Response) => {
         });
     }
 });
+
 
 embeddingRouter.post('/query-embedding', async (req: Request, res: Response) => {
     const client = new MongoClient(process.env.MONGODB_URL || 'mongodb+srv://admin:qwe@newcluster.go701p9.mongodb.net/main?retryWrites=true&w=majority&appName=NewCluster');
@@ -53,13 +54,13 @@ embeddingRouter.post('/query-embedding', async (req: Request, res: Response) => 
                                 knnBeta: {
                                     vector: embedding,
                                     path: 'embedding',
-                                    k: 10, // Number of hackathons to be returned
+                                    k: 9, 
                                 },
                             },
                         },
                         {
                             $project: {
-                                _id: 0, // Exclude the default MongoDB ID
+                                _id: 0, 
                                 title: 1,
                                 displayed_location: 1,
                                 open_state: 1,
@@ -79,6 +80,7 @@ embeddingRouter.post('/query-embedding', async (req: Request, res: Response) => 
                                 invite_only: 1,
                                 eligibility_requirement_invite_only_description: 1,
                                 managed_by_devpost_badge: 1,
+                                rules: 1,
                                 score: { $meta: 'searchScore' },
                             },
                         },
@@ -102,8 +104,7 @@ embeddingRouter.post('/query-embedding', async (req: Request, res: Response) => 
 
         console.log('highestScoreHackathon:', highestScoreHackathon);
 
-        const themesNames = highestScoreHackathon.themes.map(theme => theme.name);
-        const prompt = `Based on this context: ${themesNames.join(', ')} \n\n Query: ${query} \n\n Answer:`;
+        const prompt = `Based on this context: ${highestScoreHackathon.rules} \n\n Query: ${query} \n\n Answer:`;
 
         console.log('Constructed Prompt:', prompt);
 

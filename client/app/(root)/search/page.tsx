@@ -7,7 +7,7 @@ const SearchPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-gray-100 py-8">
             <div className="container mx-auto">
-                <h1 className="text-3xl font-bold text-center mb-8">Introduce yourself</h1>
+                <h1 className="text-3xl font-bold text-center mb-2">Introduce yourself</h1>
                 <HackathonSearch />
             </div>
         </div>

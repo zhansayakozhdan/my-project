@@ -21,17 +21,18 @@ export default function Home() {
         }
     };
 
+
     return (
         <>
             <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
                 <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
                     <div className="flex flex-col justify-center gap-8">
                         <h1 className="h2-bold">
-                            ITEventsAI — ваш надежный партнер на пути к успеху в IT!
+                            Узнайте о предстоящих хакатонах, ИТ-конференциях и технических мероприятиях по всему миру, подходящие именно вам.
                         </h1>
-                        <p className="p-regular-16 md:p-regular-18">
+                        {/* <p className="p-regular-16 md:p-regular-18">
                             ITEventsAI — это ваш персональный помощник, который самостоятельно ищет и предлагает IT ивенты, подходящие именно вам. Приложение автоматически добавляет выбранные события в ваш календарь и помогает организовать задачи до дедлайна.
-                        </p>
+                        </p> */}
                         <Button size="lg" asChild className="button w-full sm:w-fit">
                             <Link href="/search">
                                 Начать
@@ -44,7 +45,7 @@ export default function Home() {
                         alt="hero"
                         width={1000}
                         height={1000}
-                        className="max-h-[70vh] object-contain object-center 2xl:max-h-[70vh]"
+                        className="max-h-[70vh] object-contain object-center 2xl:max-h-[80vh]"
                     />
                 </div>
             </section>
@@ -53,7 +54,9 @@ export default function Home() {
                 <h2 className="h2-bold">Не упусти свои возможности</h2>
 
                 {loading ? (
-                    <p>Loading...</p>
+                    <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full border-4 border-primary border-t-transparent h-8 w-8" />
+                  </div>
                 ) : (
                     <>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

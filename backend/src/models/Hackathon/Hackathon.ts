@@ -28,4 +28,5 @@ export interface Hackathon {
     eligibility_requirement_invite_only_description: string | null;
     managed_by_devpost_badge: boolean;
     embedding: [number];
+    rules?: string | null;
 }

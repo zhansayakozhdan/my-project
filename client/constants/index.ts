@@ -8,8 +8,8 @@ export const headerLinks = [
       route: '/search',
     },
     {
-      label: 'My Profile',
-      route: '/profile',
+      label: 'About',
+      route: '#/about',
     },
   ]
   

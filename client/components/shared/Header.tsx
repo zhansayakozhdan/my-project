@@ -19,7 +19,7 @@ const Header = () => {
 
         <div className="flex w-32 justify-end gap-3">
             <MobileNav/>
-            <Button className="rounded-full" size="lg" asChild>
+            <Button className="rounded-full hidden md:inline-grid " size="lg" asChild>
                 <Link href="/sign-in">
                     Login
                 </Link>
