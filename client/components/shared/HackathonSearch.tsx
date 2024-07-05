@@ -51,8 +51,8 @@ const HackathonSearch: React.FC = () => {
   const [error, setError] = useState('');
 
   const exampleQueries = [
-    "I am web developer. I'm 20 and I'm from Almaty",
-    "I am ux/ui designer. I'm student and I'm from Shymkent",
+    "Web developer; Age: 20; Almaty",
+    "I'm UX/UI designer, sudent, from Kazakhstan",
   ];
 
   const handleExampleClick = (example: string) => {
@@ -132,7 +132,7 @@ const HackathonSearch: React.FC = () => {
         <div>
           {/* <h2 className="text-xl font-bold mb-2">OpenAI Answer:</h2>
           <p className="mb-4">{result.answer}</p> */}
-          <h2 className="text-xl font-bold mb-2">Мероприятия подходящие именно тебе:</h2>
+          <h2 className="text-xl font-bold mb-3 mt-5">Мероприятия подходящие именно тебе:</h2>
           <Calendar
             localizer={localizer}
             events={events}
