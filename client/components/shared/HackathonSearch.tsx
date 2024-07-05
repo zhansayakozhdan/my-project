@@ -132,12 +132,12 @@ const HackathonSearch: React.FC = () => {
         <div>
           {/* <h2 className="text-xl font-bold mb-2">OpenAI Answer:</h2>
           <p className="mb-4">{result.answer}</p> */}
-          <h2 className="text-xl font-bold mb-3 mt-5">Мероприятия подходящие именно тебе:</h2>
+          <h2 className="text-xl font-bold mb-3 mt-5 text-primary-500">Мероприятия подходящие именно тебе:</h2>
           <Calendar
             localizer={localizer}
             events={events}
             startAccessor="start"
-            endAccessor="end"
+            endAccessor="end" 
             style={{ height: 500 }}
           />
 
